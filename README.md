@@ -1,6 +1,5 @@
-<h1>
-  <img alt="ram-oracle logo" title="Ram-Oracle Project" src="https://i.imgur.com/GH3Xr5e.png"/> &nbsp; [![Build Status](https://travis-ci.org/kdclaw3/ram-oracle.svg?branch=v0.0.1)](https://travis-ci.org/kdclaw3/ram-oracle) &nbsp; [![npm version](https://badge.fury.io/js/ram-oracle.svg)](https://badge.fury.io/js/ram-oracle)
-</h1>
+## ![ram-oracle](https://i.imgur.com/GH3Xr5e.png) &nbsp; [![Build Status](https://travis-ci.org/kdclaw3/ram-oracle.svg?branch=v0.0.1)](https://travis-ci.org/kdclaw3/ram-oracle) &nbsp; [![npm version](https://badge.fury.io/js/ram-oracle.svg)](https://badge.fury.io/js/ram-oracle)
+
 
 ### About
 
