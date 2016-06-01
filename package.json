@@ -1,6 +1,6 @@
 {
   "name": "ram-oracle",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Hash check input password against Oracle database password.",
   "main": "index.js",
   "directories": {

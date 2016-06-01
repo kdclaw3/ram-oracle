@@ -20,12 +20,12 @@ module.exports = {
         var sl = su.length;
 
         for (var i = 0; i < sl; i++) {
-            u = u == null ? String.fromCharCode(0) + su[i] : u + String.fromCharCode(0) + su[i];
+            u = u === null ? String.fromCharCode(0) + su[i] : u + String.fromCharCode(0) + su[i];
         };
 
         ml = ((sl * 2) % 8);
 
-        pl = ml == 0 ? 0 : 8 - ml;
+        pl = ml === 0 ? 0 : 8 - ml;
 
         for (var i = 0; i < pl; i++) {
             u = u + String.fromCharCode(0);
