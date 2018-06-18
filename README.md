@@ -12,6 +12,12 @@ This module hash checks the input password against a schema's password in the Or
 $ npm install ram-oracle
 ```
 
+### Test
+
+```sh
+$ mocha test
+```
+
 ### Usage
 
 ```js
