@@ -1,13 +1,14 @@
 module.exports = {
     match: function (un, ipw, pw) {
+		
         String.prototype.hexEncode = function () {
             var hex, i, result = "";
             for (i = 0; i < this.length; i++) {
                 hex = this.charCodeAt(i).toString(16);
                 result += ("000" + hex).slice(-2);
             }
-            return result
-        }
+            return result;
+        };
 
         var crypto = require("crypto"),
             crypto2 = require("crypto"),
@@ -21,7 +22,7 @@ module.exports = {
 
         for (var i = 0; i < sl; i++) {
             u = u === null ? String.fromCharCode(0) + su[i] : u + String.fromCharCode(0) + su[i];
-        };
+        }
 
         ml = ((sl * 2) % 8);
 
@@ -29,7 +30,7 @@ module.exports = {
 
         for (var i = 0; i < pl; i++) {
             u = u + String.fromCharCode(0);
-        };
+        }
 
         f = u.hexEncode();
         cipher = crypto.createCipheriv("des-cbc", new Buffer('0123456789ABCDEF', 'hex'), new Buffer('0000000000000000', 'hex'));
@@ -50,4 +51,4 @@ module.exports = {
             return false;
         }
     }
-}
+};
