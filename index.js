@@ -3,6 +3,17 @@ const crypto = require("crypto");
 module.exports = {
     match: function (un, ipw, pw) {
 		
+		let a = [un,ipw,pw];
+		let validateFalse = false;
+		for (let i in a) {
+			if (typeof a[i] !== 'string' || a[i] === '') {
+				console.error(`[RAM ORACLE] ERROR, ${Number(i) + 1} input must be a string actual -> ${a[i]}, returning false.`);
+				validateFalse = true;
+			}
+		}
+		if (validateFalse) return false;
+
+
         String.prototype.hexEncode = function () {
             let result = '';
             for (let i = 0, l = this.length ; i < l; i++) {
