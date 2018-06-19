@@ -1,7 +1,7 @@
 const crypto = require("crypto");
 
 module.exports = {
-	match: function (un, ipw, pw) {
+	match: function (un, ipw, pw, iv = '0123456789ABCDEF' ) {
 
 		let a = [un, ipw, pw];
 		let validateFalse = false;
@@ -28,7 +28,7 @@ module.exports = {
 		const ml = ((sl * 2) % 8);
 		const pl = ml === 0 ? 0 : 8 - ml;
 
-		let u = '';
+		let u = '', u2 = '';
 		for (let i = 0; i < sl; i++) {
 			u += String.fromCharCode(0) + su[i];
 		}
@@ -38,7 +38,7 @@ module.exports = {
 
 		const f = u.hexEncode();
 
-		let cipher = crypto.createCipheriv("des-cbc", Buffer.from('0123456789ABCDEF', 'hex'), Buffer.from('0000000000000000', 'hex'));
+		let cipher = crypto.createCipheriv("des-cbc", Buffer.from(iv, 'hex'), Buffer.from('0000000000000000', 'hex'));
 		cipher.setAutoPadding(false);
 		cipher = cipher.update(f, 'hex', 'hex');
 		cipher = cipher.slice(-16);

@@ -13,12 +13,36 @@ describe("ram-oracle match function", function () {
 		expect(matches).to.deep.equal(true);
 
 	});
+
+
+	it("determines if password hashes are truthy for specificying an initialization vector", function () {
+
+		let oracleSchema = 'JDOE',
+			hashedOraclePassword = '587F72032A3C828E',
+			inputPassword = 'password';
+		let matches = ram.match(oracleSchema, hashedOraclePassword, inputPassword, '0123456789ABCDEF' );
+
+		expect(matches).to.deep.equal(true);
+
+	});
+
 	it("determines if password hashes are falsey", function () {
 
 		let oracleSchema = 'JDOE',
 			hashedOraclePassword = '587F72032A3C828E',
 			inputPassword = 'incorrect_password';
 		let matches = ram.match(oracleSchema, hashedOraclePassword, inputPassword);
+
+		expect(matches).to.deep.equal(false);
+
+	});
+
+	it("determines if password hashes are falsey for specificying an incorrect initialization vector", function () {
+
+		let oracleSchema = 'JDOE',
+			hashedOraclePassword = '587F72032A3C828E',
+			inputPassword = 'password';
+		let matches = ram.match(oracleSchema, hashedOraclePassword, inputPassword, '0003456789ABCDEF' );
 
 		expect(matches).to.deep.equal(false);
 
