@@ -20,7 +20,7 @@ module.exports = {
 
         var sl = su.length;
 
-        for (var i = 0; i < sl; i++) {
+        for (let i = 0; i < sl; i++) {
             u = u === null ? String.fromCharCode(0) + su[i] : u + String.fromCharCode(0) + su[i];
         }
 
@@ -28,7 +28,7 @@ module.exports = {
 
         pl = ml === 0 ? 0 : 8 - ml;
 
-        for (var i = 0; i < pl; i++) {
+        for (let i = 0; i < pl; i++) {
             u = u + String.fromCharCode(0);
         }
 

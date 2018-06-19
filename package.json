@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "description": "Hash check input password against Oracle database password.",
   "engines": {
-    "node": ">=5.10.0"
+    "node": ">=6.4.0"
   },
   "main": "index.js",
   "directories": {
