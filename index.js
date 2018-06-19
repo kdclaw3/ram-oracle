@@ -33,13 +33,13 @@ module.exports = {
         }
 
         f = u.hexEncode();
-        cipher = crypto.createCipheriv("des-cbc", new Buffer('0123456789ABCDEF', 'hex'), new Buffer('0000000000000000', 'hex'));
+        cipher = crypto.createCipheriv("des-cbc", Buffer.from('0123456789ABCDEF', 'hex'), Buffer.from('0000000000000000', 'hex'));
         cipher.setAutoPadding(false);
         c = cipher.update(f, 'hex', 'hex');
 
         k2 = c.slice(-16);
 
-        cipher2 = crypto2.createCipheriv("des-cbc", new Buffer(k2, 'hex'), new Buffer('0000000000000000', 'hex'));
+        cipher2 = crypto2.createCipheriv("des-cbc", Buffer.from(k2, 'hex'), Buffer.from('0000000000000000', 'hex'));
         cipher2.setAutoPadding(false);
         c2 = cipher2.update(f, 'hex', 'hex');
 
