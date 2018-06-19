@@ -1,9 +1,9 @@
 const crypto = require("crypto");
 
 module.exports = {
-    match: function (un, ipw, pw) {
-		
-		let a = [un,ipw,pw];
+	match: function (un, ipw, pw) {
+
+		let a = [un, ipw, pw];
 		let validateFalse = false;
 		for (let i in a) {
 			if (typeof a[i] !== 'string' || a[i] === '') {
@@ -14,14 +14,14 @@ module.exports = {
 		if (validateFalse) return false;
 
 
-        String.prototype.hexEncode = function () {
-            let result = '';
-            for (let i = 0, l = this.length ; i < l; i++) {
-                let hex = this.charCodeAt(i).toString(16);
-                result += ('000' + hex).slice(-2);
-            }
-            return result;
-        };
+		String.prototype.hexEncode = function () {
+			let result = '';
+			for (let i = 0, l = this.length; i < l; i++) {
+				let hex = this.charCodeAt(i).toString(16);
+				result += ('000' + hex).slice(-2);
+			}
+			return result;
+		};
 
 		const su = (un + pw).toUpperCase();
 		const sl = su.length;
@@ -29,31 +29,31 @@ module.exports = {
 		const pl = ml === 0 ? 0 : 8 - ml;
 
 		let u = '';
-        for (let i = 0; i < sl; i++) {
-            u += String.fromCharCode(0) + su[i];
-        }
-        for (let i = 0; i < pl; i++) {
-            u += String.fromCharCode(0);
-        }
+		for (let i = 0; i < sl; i++) {
+			u += String.fromCharCode(0) + su[i];
+		}
+		for (let i = 0; i < pl; i++) {
+			u += String.fromCharCode(0);
+		}
 
 		const f = u.hexEncode();
-		
-        let cipher = crypto.createCipheriv("des-cbc", Buffer.from('0123456789ABCDEF', 'hex'), Buffer.from('0000000000000000', 'hex'));
-        cipher.setAutoPadding(false);
-        cipher = cipher.update(f, 'hex', 'hex');
-        cipher = cipher.slice(-16);
 
-        let cipher2 = crypto.createCipheriv("des-cbc", Buffer.from(cipher, 'hex'), Buffer.from('0000000000000000', 'hex'));
-        cipher2.setAutoPadding(false);
-        cipher2 = cipher2.update(f, 'hex', 'hex');
+		let cipher = crypto.createCipheriv("des-cbc", Buffer.from('0123456789ABCDEF', 'hex'), Buffer.from('0000000000000000', 'hex'));
+		cipher.setAutoPadding(false);
+		cipher = cipher.update(f, 'hex', 'hex');
+		cipher = cipher.slice(-16);
 
-        const hash = cipher2.slice(-16).toUpperCase();
+		let cipher2 = crypto.createCipheriv("des-cbc", Buffer.from(cipher, 'hex'), Buffer.from('0000000000000000', 'hex'));
+		cipher2.setAutoPadding(false);
+		cipher2 = cipher2.update(f, 'hex', 'hex');
 
-        if (hash === ipw) {
-            return true;
-        } else {
-            return false;
+		const hash = cipher2.slice(-16).toUpperCase();
+
+		if (hash === ipw) {
+			return true;
+		} else {
+			return false;
 		}
-		
-    }
+
+	}
 };
