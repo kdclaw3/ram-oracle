@@ -17,6 +17,10 @@ $ npm install ram-oracle
 ```sh
 $ mocha test
 ```
+or
+```sh
+$ npm run-script test
+```
 
 ### Usage
 
