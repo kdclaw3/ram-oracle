@@ -1,6 +1,6 @@
 {
   "name": "ram-oracle",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hash check input password against Oracle database password.",
   "engines": {
     "node": ">=6.4.0"
