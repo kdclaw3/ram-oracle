@@ -2,7 +2,7 @@ const crypto = require("crypto");
 
 module.exports = {
 
-	match: function (un, ipw, pw, iv = '0123456789ABCDEF' ) {
+	match: function (un, ipw, pw, iv = '0123456789ABCDEF') {
 
 		//function validation
 		let a = [un, ipw, pw];
@@ -34,7 +34,7 @@ module.exports = {
 		for (let i = 0; i < sl; i++) {
 			u += String.fromCharCode(0) + su[i];
 		}
-		u += String.fromCharCode(0,0,0,0,0,0,0,0).substring(0,pl);
+		u += String.fromCharCode(0, 0, 0, 0, 0, 0, 0, 0).substring(0, pl);
 
 		const f = u.hexEncode();
 
@@ -48,7 +48,7 @@ module.exports = {
 		cipher2 = cipher2.update(f, 'hex', 'hex');
 
 		const hash = cipher2.slice(-16).toUpperCase();
-		
+
 		if (hash === ipw) {
 			return true;
 		} else {
