@@ -3,6 +3,7 @@ const ram = require('./index.js'),
 	expect = chai.expect;
 
 describe("ram-oracle match function", function () {
+
 	it("determines if password hashes are truthy", function () {
 
 		let oracleSchema = 'JDOE',
@@ -13,7 +14,6 @@ describe("ram-oracle match function", function () {
 		expect(matches).to.deep.equal(true);
 
 	});
-
 
 	it("determines if password hashes are truthy for specificying an initialization vector", function () {
 
