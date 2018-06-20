@@ -7,7 +7,7 @@ This module hash checks the input password against a schema's password in the Or
 
 ### About Oracle Database Security
 
-Oracle stores the trimmed encrypted value of the encrypted value of the SCHEMA + PASSWORD in the [SYS.USER$] table/view. Out of the box Oracle databases use a standard and well know, to the security minded, encryption key. (Oracle calle it a "key", to the security community an initialization vector.) 
+Oracle stores the trimmed encrypted value of the trimmed encrypted value of the SCHEMA + PASSWORD in the [SYS.USER$] table/view. Out of the box Oracle databases use a standard and well know, to the security minded, encryption key. (Oracle calle it a "key", to the security community an initialization vector.) 
 
 ### Installation
 
@@ -22,19 +22,19 @@ $ mocha test
 ```
 or
 ```sh
-$ npm run-script test
+$ npm test
 ```
 
 ### Usage
 
 ```js
-var ram = require('ram-oracle');
+const ram = require('ram-oracle');
 
 //.match(<ORACLE SCHEMA>,<ORACLE PASSWORD>,<INPUT PASSWORD>)
-var matches = ram.match('JDOE','587F72032A3C828E','password');
+let matches = ram.match('JDOE','587F72032A3C828E','password');
 console.log('The input matches the Oracle Database password: ' + matches + '.');
 
-var matches = ram.match('JDOE','587F72032A3C828E','incorrect_password');
+let matches = ram.match('JDOE','587F72032A3C828E','incorrect_password');
 console.log('The input matches the Oracle Database password: ' + matches + '.');
 ```
 
