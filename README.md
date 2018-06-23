@@ -41,10 +41,10 @@ console.log('The input matches the Oracle Database password: ' + matches + '.');
 ### Thanks
 
 This package was inspired by a couple pieces of work and notes. 
-* Pete Finnigan's testpwd.sql script. At the time of publishing it could be found at http://www.petefinnigan.com/tools.htm. 
-* This thread also has some merit and explination of some concepts http://seclists.org/pen-test/2000/Nov/198. 
-* You might also want to check here for some notes on a Java implementation https://community.oracle.com/thread/1528235. 
-* And in Ruby https://stackoverflow.com/questions/19718060/des3-encryption-ruby-opensslcipher-vs-oracle-dbms-obfuscation-toolkit.
+* Merit and explination of some concepts => http://seclists.org/pen-test/2000/Nov/198 
+* (PLSQL) => http://www.petefinnigan.com/tools.htm
+* (JAVA) => https://community.oracle.com/thread/1528235
+* (Ruby) => https://stackoverflow.com/questions/19718060/des3-encryption-ruby-opensslcipher-vs-oracle-dbms-obfuscation-toolkit
 
 ### License
 
