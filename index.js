@@ -1,4 +1,4 @@
-const crypto = require("crypto");
+const crypto = require('crypto');
 
 module.exports = {
 
@@ -9,14 +9,14 @@ module.exports = {
 		let validateFalse = false;
 		for (let i in a) {
 			if (typeof a[i] !== 'string' || a[i] === '') {
-				console.error(`[RAM ORACLE] ERROR, ${Number(i) + 1} input must be a string actual -> ${a[i]}, returning false.`);
+				console.error(`[RAM ORACLE] ERROR, ${Number(i) + 1} input must be a string actual -> ${a[i]}, returning false.`); //eslint-disable-line no-console
 				validateFalse = true;
 			}
 		}
 		if (validateFalse) return false;
 
 
-		String.prototype.hexEncode = function () {
+		String.prototype.hexEncode = () => {
 			let result = '';
 			for (let i = 0, l = this.length; i < l; i++) {
 				let hex = this.charCodeAt(i).toString(16);
@@ -38,12 +38,12 @@ module.exports = {
 
 		const f = u.hexEncode();
 
-		let cipher = crypto.createCipheriv("des-cbc", Buffer.from(iv, 'hex'), Buffer.from('0000000000000000', 'hex'));
+		let cipher = crypto.createCipheriv('des-cbc', Buffer.from(iv, 'hex'), Buffer.from('0000000000000000', 'hex'));
 		cipher.setAutoPadding(false);
 		cipher = cipher.update(f, 'hex', 'hex');
 		const sub = cipher.slice(-16);
 
-		let cipher2 = crypto.createCipheriv("des-cbc", Buffer.from(sub, 'hex'), Buffer.from('0000000000000000', 'hex'));
+		let cipher2 = crypto.createCipheriv('des-cbc', Buffer.from(sub, 'hex'), Buffer.from('0000000000000000', 'hex'));
 		cipher2.setAutoPadding(false);
 		cipher2 = cipher2.update(f, 'hex', 'hex');
 

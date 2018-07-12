@@ -2,9 +2,9 @@ const ram = require('./index.js'),
 	chai = require('chai'),
 	expect = chai.expect;
 
-describe("ram-oracle match function", function () {
+describe('ram-oracle match function', function () {
 
-	it("determines if password hashes are truthy", function () {
+	it('determines if password hashes are truthy', function () {
 
 		let oracleSchema = 'JDOE',
 			hashedOraclePassword = '587F72032A3C828E',
@@ -15,7 +15,7 @@ describe("ram-oracle match function", function () {
 
 	});
 
-	it("determines if password hashes are truthy for specificying an initialization vector", function () {
+	it('determines if password hashes are truthy for specificying an initialization vector', function () {
 
 		let oracleSchema = 'JDOE',
 			hashedOraclePassword = '587F72032A3C828E',
@@ -26,7 +26,7 @@ describe("ram-oracle match function", function () {
 
 	});
 
-	it("determines if password hashes are falsey", function () {
+	it('determines if password hashes are falsey', function () {
 
 		let oracleSchema = 'JDOE',
 			hashedOraclePassword = '587F72032A3C828E',
@@ -37,7 +37,7 @@ describe("ram-oracle match function", function () {
 
 	});
 
-	it("determines if password hashes are falsey for specificying an incorrect initialization vector", function () {
+	it('determines if password hashes are falsey for specificying an incorrect initialization vector', function () {
 
 		let oracleSchema = 'JDOE',
 			hashedOraclePassword = '587F72032A3C828E',
@@ -48,7 +48,7 @@ describe("ram-oracle match function", function () {
 
 	});
 
-	it("determines validates input for null", function () {
+	it('determines validates input for null', function () {
 
 		let oracleSchema = null,
 			hashedOraclePassword = null,
@@ -59,7 +59,7 @@ describe("ram-oracle match function", function () {
 
 	});
 
-	it("determines validates input for undefined", function () {
+	it('determines validates input for undefined', function () {
 
 		let oracleSchema,
 			hashedOraclePassword,
@@ -70,7 +70,7 @@ describe("ram-oracle match function", function () {
 
 	});
 
-	it("determines validates input for empty", function () {
+	it('determines validates input for empty', function () {
 
 		let oracleSchema = '',
 			hashedOraclePassword = '',
@@ -81,7 +81,7 @@ describe("ram-oracle match function", function () {
 
 	});
 
-	it("determines valid against numbers", function () {
+	it('determines valid against numbers', function () {
 
 		let oracleSchema = 123,
 			hashedOraclePassword = 123,
