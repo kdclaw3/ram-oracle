@@ -49,3 +49,7 @@ This package was inspired by a couple pieces of work and notes.
 ### License
 
 MIT License, Copyright (c) 2018 Dee Clawson
+
+### Dependencies
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkdclaw3%2Fram-oracle.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkdclaw3%2Fram-oracle?ref=badge_large)
