@@ -1,4 +1,4 @@
-## ![ram-oracle](https://i.imgur.com/GH3Xr5e.png) &nbsp; [![Build Status](https://travis-ci.org/kdclaw3/ram-oracle.svg?branch=v0.0.1)](https://travis-ci.org/kdclaw3/ram-oracle) &nbsp; [![npm version](https://badge.fury.io/js/ram-oracle.svg)](https://badge.fury.io/js/ram-oracle) &nbsp; [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](./LICENSE)
+## ![ram-oracle](https://i.imgur.com/GH3Xr5e.png) &nbsp; [![Build Status](https://travis-ci.org/kdclaw3/ram-oracle.svg?branch=v0.0.1)](https://travis-ci.org/kdclaw3/ram-oracle) &nbsp; [![npm version](https://badge.fury.io/js/ram-oracle.svg)](https://badge.fury.io/js/ram-oracle) &nbsp; [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](./LICENSE) &nbsp; [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkdclaw3%2Fram-oracle.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkdclaw3%2Fram-oracle?ref=badge_shield)
 
 
 ### About This Package
