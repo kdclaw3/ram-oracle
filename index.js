@@ -2,21 +2,22 @@ const crypto = require('crypto');
 
 module.exports = {
 
-	match: function (un, ipw, pw, iv = '0123456789ABCDEF') {
+	match: (un, ipw, pw, iv = '0123456789ABCDEF') => {
 
 		//function validation
-		let a = [un, ipw, pw];
+		let inputs = [un, ipw, pw, iv];
 		let validateFalse = false;
-		for (let i in a) {
-			if (typeof a[i] !== 'string' || a[i] === '') {
-				console.error(`[RAM ORACLE] ERROR, ${Number(i) + 1} input must be a string actual -> ${a[i]}, returning false.`); //eslint-disable-line no-console
+		for (let i in inputs) {
+			if (typeof inputs[i] !== 'string' || inputs[i] === '') {
+				let n = Number(i)+1, s=['th', 'st', 'nd', 'rd'], v=n%100;
+				console.error(`[RAM ORACLE] ERROR, ${n+(s[(v-20)%10]||s[v]||s[0])} input must be a string actual -> ${inputs[i]}, returning false.`); //eslint-disable-line no-console
 				validateFalse = true;
 			}
 		}
 		if (validateFalse) return false;
 
 
-		String.prototype.hexEncode = () => {
+		String.prototype.hexEncode = function () {
 			let result = '';
 			for (let i = 0, l = this.length; i < l; i++) {
 				let hex = this.charCodeAt(i).toString(16);

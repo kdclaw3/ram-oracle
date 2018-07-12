@@ -52,8 +52,9 @@ describe('ram-oracle match function', function () {
 
 		let oracleSchema = null,
 			hashedOraclePassword = null,
-			inputPassword = null;
-		let matches = ram.match(oracleSchema, hashedOraclePassword, inputPassword);
+			inputPassword = null,
+			iv = null;
+		let matches = ram.match(oracleSchema, hashedOraclePassword, inputPassword, iv);
 
 		expect(matches).to.deep.equal(false);
 
@@ -63,8 +64,9 @@ describe('ram-oracle match function', function () {
 
 		let oracleSchema,
 			hashedOraclePassword,
-			inputPassword;
-		let matches = ram.match(oracleSchema, hashedOraclePassword, inputPassword);
+			inputPassword,
+			iv;
+		let matches = ram.match(oracleSchema, hashedOraclePassword, inputPassword, iv);
 
 		expect(matches).to.deep.equal(false);
 
@@ -74,8 +76,9 @@ describe('ram-oracle match function', function () {
 
 		let oracleSchema = '',
 			hashedOraclePassword = '',
-			inputPassword = '';
-		let matches = ram.match(oracleSchema, hashedOraclePassword, inputPassword);
+			inputPassword = '',
+			iv = '';
+		let matches = ram.match(oracleSchema, hashedOraclePassword, inputPassword, iv);
 
 		expect(matches).to.deep.equal(false);
 
@@ -85,8 +88,9 @@ describe('ram-oracle match function', function () {
 
 		let oracleSchema = 123,
 			hashedOraclePassword = 123,
-			inputPassword = 123;
-		let matches = ram.match(oracleSchema, hashedOraclePassword, inputPassword);
+			inputPassword = 123,
+			iv = 123;
+		let matches = ram.match(oracleSchema, hashedOraclePassword, inputPassword, iv);
 
 		expect(matches).to.deep.equal(false);
 
