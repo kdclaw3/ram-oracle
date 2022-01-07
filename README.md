@@ -7,7 +7,7 @@ This module hash checks the input password against a schema's password in the Or
 
 ### About Oracle Database Security
 
-Oracle stores the trimmed encrypted value of the trimmed encrypted value of the SCHEMA + PASSWORD in the [SYS.USER$] table/view. Out of the box Oracle databases use a standard and well know, to the security minded, encryption key. (Oracle calle it a "key", to the security community an initialization vector.) 
+Oracle stores the trimmed encrypted value of the trimmed encrypted value of the SCHEMA + PASSWORD in the [SYS.USER$] table/view. Out of the box Oracle databases use a standard and well know, to the security minded, encryption key. (Oracle calls it a "key", to the security community an initialization vector.) 
 
 ### Installation
 
